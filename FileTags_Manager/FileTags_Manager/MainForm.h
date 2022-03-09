@@ -1,4 +1,7 @@
 #pragma once
+#include <vector>
+#include <String>
+#include "DirectoryManagementLibrary.h"
 
 namespace FileTagsManager {
 
@@ -34,8 +37,10 @@ namespace FileTagsManager {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::Button^ button1;
+	protected:
+
+
 	protected:
 
 	protected:
@@ -53,36 +58,25 @@ namespace FileTagsManager {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// groupBox1
+			// button1
 			// 
-			this->groupBox1->Location = System::Drawing::Point(10, 3);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(443, 384);
-			this->groupBox1->TabIndex = 0;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"groupBox1";
-			this->groupBox1->Enter += gcnew System::EventHandler(this, &MainForm::groupBox1_Enter);
-			// 
-			// groupBox2
-			// 
-			this->groupBox2->Location = System::Drawing::Point(475, 12);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(443, 384);
-			this->groupBox2->TabIndex = 1;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"groupBox2";
+			this->button1->Location = System::Drawing::Point(78, 143);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(548, 217);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
 			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(13, 24);
+			this->AutoScaleDimensions = System::Drawing::SizeF(11, 21);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1276, 805);
-			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->groupBox1);
+			this->ClientSize = System::Drawing::Size(1080, 704);
+			this->Controls->Add(this->button1);
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
 			this->ResumeLayout(false);
@@ -92,6 +86,10 @@ namespace FileTagsManager {
 	private: System::Void listView1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		std::vector<std::string> fileList;
+		DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\*", fileList);
 	}
 	};
 }
