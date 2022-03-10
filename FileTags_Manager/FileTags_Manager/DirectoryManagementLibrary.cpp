@@ -6,29 +6,23 @@
 * @param[out]   file_names  ファイル名一覧
 * return        true:成功, false:失敗
 **/
-bool DirectoryManagementLibrary::getFileNames(std::string folderPath, std::vector<std::string>& file_names)
+std::vector<std::string> DirectoryManagementLibrary::getFileNames(const char* path)
 {
-    using namespace Log;
-    using namespace std::filesystem;
+    DIR* dp;
+    dp = opendir(path);
+    if (dp == NULL) exit(1);
+    dirent* entry = readdir(dp);
 
-    directory_iterator iter(folderPath), end;
-    std::error_code err;
+    std::vector<std::string>* inDirs = new std::vector<std::string>();
 
-    for (; iter != end && !err; iter.increment(err)) {
-        const directory_entry entry = *iter;
-
-        file_names.push_back(entry.path().string());
-        printf("%s\n", file_names.back().c_str());
+    while (entry != NULL) {
+        if (entry != NULL) {
+            //std::cout << path << entry->d_name << std::endl;
+            LOG_DEBUG(entry->d_name);
+            inDirs->push_back(entry->d_name);
+        }
+        entry = readdir(dp);
     }
 
-    /* エラー処理 */
-    if (err) {
-        LOG_DEBUG(std::to_string(err.value()));
-        LOG_DEBUG(err.message());
-
-        //std::cout << err.value() << std::endl;
-        //std::cout << err.message() << std::endl;
-        return false;
-    }
-    return true;
+    return *inDirs;
 }

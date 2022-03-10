@@ -1,14 +1,15 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include <vector>
-#include <filesystem>
+#include <iostream>
+#include <cstdlib>
+#include "dirent.h"
 #include "Logs.h"
 
-
+using namespace Log;
 
 ref class DirectoryManagementLibrary
 {
+
     /**
     * @brief フォルダ以下のファイル一覧を取得する関数
     * @param[in]    folderPath  フォルダパス
@@ -16,6 +17,6 @@ ref class DirectoryManagementLibrary
     * return        true:成功, false:失敗
     **/
     public:
-    static bool getFileNames(std::string folderPath, std::vector<std::string>& file_names);
+    static std::vector<std::string> getFileNames(const char* path);
 };
 

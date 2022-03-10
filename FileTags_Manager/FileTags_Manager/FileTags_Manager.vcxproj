@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectoryManagementLibrary.h" />
+    <ClInclude Include="dirent.h" />
     <ClInclude Include="Logs.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>

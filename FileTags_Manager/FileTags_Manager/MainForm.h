@@ -4,7 +4,6 @@
 #include "DirectoryManagementLibrary.h"
 #include "Logs.h"
 
-using namespace Log;
 
 namespace FileTagsManager {
 
@@ -14,6 +13,7 @@ namespace FileTagsManager {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace Log;
 
 	/// <summary>
 	/// MainForm ‚ÌŠT—v
@@ -93,9 +93,14 @@ namespace FileTagsManager {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 
-			std::vector<std::string> fileList;
-			//DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\*", fileList);
-			LOG_DEBUG("private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {");
+			//std::vector<std::string> fileList;
+			std::vector<std::string> s = DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\");
+		
+			for each (std::string s_in in s)
+			{
+				LOG_DEBUG(s_in);
+			}
+		
 		}
 		catch (String^ e) {
 			Debug::WriteLine(e);
