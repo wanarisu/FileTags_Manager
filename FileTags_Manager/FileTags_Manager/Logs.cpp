@@ -6,25 +6,26 @@ CLog::CLog()
 {
 }
 
-void CLog::LogDebug(const char* file, const char* func, int line, std::string fmt, ... array<Object^>^ args)
+void CLog::LogDebug(std::string file, std::string func, int line, std::string message)
 {
-    // メッセージに可変長引数を埋め込みます。
-    String^ message = String::Format(gcnew String(fmt.c_str()), args);
+    //// 0からのためインクリメント
+    //++line;
 
-    // 0からのためインクリメント
-    ++line;
+    std::string log = file + ' ' + func + '('+ std::to_string(line) +") -- " + message;
 
     // ログを<ファイル名> 関数名(行番号) メッセージの文字列にします。
-    String^ log = String::Format("{0} {1}({2}) {3}", gcnew String(file), gcnew String(func), line, message);
+    //String^ log = String::Format("{0} {1}({2}) {3}", gcnew String(file), gcnew String(func), line, message);
 
     //// ログをコンソールに出力します。
     //Debug::WriteLine(log);
 
-    CLog::FileExport(msclr::interop::marshal_as<std::string>(log), "C:\\Users\\wanarisu\\Documents\\cpp.log");
+    CLog::FileExport(log, "C:\\Users\\wanar\\Documents\\cpp.log");
 }
 
 void CLog::FileExport(std::string str, std::string path) {
-    std::ofstream outputfile(path);
-    outputfile << str.c_str();
-    outputfile.close();
+    //std::ofstream outputfile(path);
+    std::fstream file;
+    file.open(path, std::ios_base::app | std::ios_base::in);
+    file << str.c_str() << std::endl;
+    file.close();
 }

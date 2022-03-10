@@ -6,6 +6,5 @@ using namespace FileTagsManager;
 int main()
 {
 	Application::Run(gcnew MainForm());
-
 	return 0;
 }

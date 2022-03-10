@@ -2,6 +2,9 @@
 #include <vector>
 #include <String>
 #include "DirectoryManagementLibrary.h"
+#include "Logs.h"
+
+using namespace Log;
 
 namespace FileTagsManager {
 
@@ -49,7 +52,7 @@ namespace FileTagsManager {
 		/// <summary>
 		/// 必要なデザイナー変数です。
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -88,8 +91,18 @@ namespace FileTagsManager {
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		std::vector<std::string> fileList;
-		DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\*", fileList);
+		try {
+
+			std::vector<std::string> fileList;
+			//DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\*", fileList);
+			LOG_DEBUG("private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {");
+		}
+		catch (String^ e) {
+			Debug::WriteLine(e);
+		}
+		catch (...)
+		{
+		}
 	}
 	};
 }
