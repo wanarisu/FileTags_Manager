@@ -3,7 +3,7 @@
 #include <String>
 #include "DirectoryManagementLibrary.h"
 #include "Logs.h"
-
+#include "IniLoader.h"
 
 namespace FileTagsManager {
 
@@ -94,13 +94,13 @@ namespace FileTagsManager {
 		try {
 
 			//std::vector<std::string> fileList;
-			std::vector<std::string> s = DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\");
+			//std::vector<std::string> s = DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\");
 		
-			for each (std::string s_in in s)
-			{
-				LOG_DEBUG(s_in);
-			}
-		
+			//for each (std::string s_in in s)
+			//{
+			//	LOG_DEBUG(s_in);
+			//}
+			IniLoader::IniLoad();
 		}
 		catch (String^ e) {
 			Debug::WriteLine(e);

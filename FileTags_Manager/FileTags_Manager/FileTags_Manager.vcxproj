@@ -122,12 +122,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectoryManagementLibrary.cpp" />
+    <ClCompile Include="IniLoader.cpp" />
     <ClCompile Include="Logs.cpp" />
     <ClCompile Include="MainForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectoryManagementLibrary.h" />
     <ClInclude Include="dirent.h" />
+    <ClInclude Include="IniLoader.h" />
     <ClInclude Include="Logs.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>

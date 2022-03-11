@@ -17,6 +17,10 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class Log.CLog: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Methods:
     LogDebug(basic_string<char\,std::char_traits<char>\,std::allocator<char> >*, basic_string<char\,std::char_traits<char>\,std::allocator<char> >*, Int32, basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, Static, HideBySig
+Class IniLoader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    IniLoad(): PrivateScope, Public, Static, HideBySig
 Class FileTagsManager.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
