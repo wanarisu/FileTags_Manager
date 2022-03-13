@@ -1,0 +1,3 @@
+D:\VisualC\FileTags_Manager\FileTags_Manager\FileTags_Manager\x64\Debug\FileTags_Manager.vcxproj.AssemblyReference.cache
+D:\VisualC\FileTags_Manager\FileTags_Manager\FileTags_Manager\x64\Debug\FileTagsManager.MainForm.resources
+D:\VisualC\FileTags_Manager\FileTags_Manager\FileTags_Manager\x64\Debug\FileTags_Manager.vcxproj.GenerateResource.cache
