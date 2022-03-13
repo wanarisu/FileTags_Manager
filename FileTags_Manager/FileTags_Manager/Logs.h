@@ -1,9 +1,10 @@
 #pragma once
-
-#include<iostream>
+#include <sstream>
+#include <iostream>
 #include <msclr/marshal_cppstd.h>
-#include<fstream>
+#include <fstream>
 #include <string>
+#include <iomanip>
 #using <system.dll> // Debug::WriteLineのために必要
 
 // "DEBUG"マクロをコメントアウトすれば、ログは出力されません。
@@ -31,6 +32,7 @@ namespace Log
     private:
         CLog();
         static void FileExport(std::string str, std::string path);
+        static std::string getDatetimeStr();
     public:
         /**
         * @brief デバッグログを出力します。

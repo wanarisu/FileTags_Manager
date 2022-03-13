@@ -1,0 +1,10 @@
+﻿  DirectoryManagementLibrary.cpp
+  IniLoader.cpp
+  Logs.cpp
+D:\VisualC\FileTags_Manager\FileTags_Manager\FileTags_Manager\Logs.cpp(29,27): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  MainForm.cpp
+D:\VisualC\FileTags_Manager\FileTags_Manager\FileTags_Manager\MainForm.h(105,18): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+  .NETFramework,Version=v4.6.AssemblyAttributes.cpp
+  コードを生成中...
+  DirectoryManagementLibrary.obj : MSIL モジュールが見つかりました。MSIL ではインクリメンタル リンクは無効化されています。フル リンクを行います
+  FileTags_Manager.vcxproj -> D:\VisualC\FileTags_Manager\FileTags_Manager\x64\Debug\FileTags_Manager.exe
