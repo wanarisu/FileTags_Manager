@@ -4,7 +4,7 @@
 #include "IniLoader.h"
 #include "Logs.h"
 #include "DirectoryManagementLibrary.h"
-
+#include "SQLite3_Lib.h"
 namespace FileTagsManager {
 
 	using namespace System;
@@ -93,14 +93,15 @@ namespace FileTagsManager {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 
-			std::vector<std::string> fileList;
-			std::vector<std::string> s = DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\");
+			//std::vector<std::string> fileList;
+			//std::vector<std::string> s = DirectoryManagementLibrary::getFileNames("C:\\Users\\wanarisu\\Downloads\\");
 		
-			for each (std::string s_in in s)
-			{
-				LOG_DEBUG(s_in);
-			}
-
+			//for each (std::string s_in in s)
+			//{
+			//	LOG_DEBUG(s_in);
+			//}
+			SQLite3_Lib* sqlTest = new SQLite3_Lib();
+			sqlTest->SQL_Test();
 		}
 		catch (String^ e) {
 			//Debug::WriteLine(e);

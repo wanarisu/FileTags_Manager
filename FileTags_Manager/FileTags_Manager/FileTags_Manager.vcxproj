@@ -92,7 +92,7 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -128,6 +128,7 @@
     <ClCompile Include="IniLoader.cpp" />
     <ClCompile Include="Logs.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="SQLite3_Lib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectoryManagementLibrary.h" />
@@ -135,8 +136,10 @@
     <ClInclude Include="IniLoader.h" />
     <ClInclude Include="Logs.h" />
     <ClInclude Include="MainForm.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="sqlite3.h" />
+    <ClInclude Include="SQLite3_Lib.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
